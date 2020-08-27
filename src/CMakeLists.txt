@@ -26,6 +26,8 @@ add_executable(communicator-client)
 target_link_libraries(communicator-client LINK_PUBLIC ${Boost_LIBRARIES} cppurses pthread)
 target_sources(communicator-client PRIVATE
         client.cpp
+        tui/MainLayout.cpp
+        tui/CommandBox.cpp
 )
 
 #SERVER
