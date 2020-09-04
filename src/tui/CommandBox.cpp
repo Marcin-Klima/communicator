@@ -3,13 +3,22 @@
 //
 
 #include "CommandBox.h"
+#include "../CommunicatorClient.h"
 
 bool CommandBox::key_press_event( const Key::State & keyboard )
 {
-	if ( keyboard.key == Key::Enter )
+	if ( keyboard.key == Key::Ctrl_e )
 	{
-		set_contents( "" );
-		return true;
+		if ( not contents().empty() and contents().at( 0 ) == "/" )
+		{
+			client_->Stop();
+			return true;
+		}
 	}
 	return Textbox::key_press_event( keyboard );
+}
+
+CommandBox::CommandBox( CommunicatorClient *client ) :
+	 client_( client )
+{
 }

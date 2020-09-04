@@ -3,15 +3,17 @@
 //
 
 #include "MainLayout.h"
+#include "WidgetsConfiguration.h"
+#include "CommandBox.h"
 
-MainLayout::MainLayout() :
+MainLayout::MainLayout( CommunicatorClient *communicatorClient ) :
 	 rightPanel( this->make_child<layout::Vertical>()),
 	 echoTextBox( rightPanel.make_child<Textbox>()),
-	 commandTextBox( rightPanel.make_child<CommandBox>())
+	 commandBox( rightPanel.make_child<CommandBox>( communicatorClient ))
 {
-	commandTextBox.height_policy.fixed( WidgetsConfiguration::commandBoxHeight );
-	commandTextBox.brush.set_background( WidgetsConfiguration::backgroundCommandBox );
-	commandTextBox.brush.set_foreground( WidgetsConfiguration::foregroundCommandBox );
+	commandBox.height_policy.fixed( WidgetsConfiguration::commandBoxHeight );
+	commandBox.brush.set_background( WidgetsConfiguration::backgroundCommandBox );
+	commandBox.brush.set_foreground( WidgetsConfiguration::foregroundCommandBox );
 
 	echoTextBox.brush.set_background( WidgetsConfiguration::backgroundEchoBox );
 	echoTextBox.brush.set_foreground( WidgetsConfiguration::foregroundEchoBox );

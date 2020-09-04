@@ -1,12 +1,9 @@
-#include <iostream>
-#include "tui/MainLayout.h"
-
-using namespace cppurses;
+#include "CommunicatorClient.h"
 
 int main()
 {
-	System sys;
-	MainLayout mainLayout;
+	CommunicatorClient communicatorClient;
 
-	return sys.run( mainLayout );
+
+	return communicatorClient.Start();
 }

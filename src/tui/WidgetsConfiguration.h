@@ -16,6 +16,7 @@ public:
     static const auto backgroundEchoBox = Color::Black;
     static const auto foregroundEchoBox = Color::White;
     static const size_t commandBoxHeight = 8;
+    static const size_t leftPanelWidth = 15;
 };
 
 

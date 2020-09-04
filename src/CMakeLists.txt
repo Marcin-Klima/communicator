@@ -1,12 +1,13 @@
 find_package(Boost 1.72.0 REQUIRED)
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/builds/debug)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/builds/debug)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/builds/release)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     message(STATUS "Compiling using Clang (LLVM) compiler")
     set(CMAKE_CXX_FLAGS "-Wall -std=c++17")
     set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DRELEASE")
+
     set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -fstandalone-debug -DDEBUG")
 endif()
 
@@ -25,9 +26,10 @@ endif()
 add_executable(communicator-client)
 target_link_libraries(communicator-client LINK_PUBLIC ${Boost_LIBRARIES} cppurses pthread)
 target_sources(communicator-client PRIVATE
-        client.cpp
-        tui/MainLayout.cpp
+        CommunicatorClient.cpp
         tui/CommandBox.cpp
+        tui/MainLayout.cpp
+        client.cpp
 )
 
 #SERVER

@@ -1,23 +1,25 @@
 //
 // Created by waxta on 27.08.2020.
 //
-#include <cppurses/cppurses.hpp>
-#include "WidgetsConfiguration.h"
-#include "CommandBox.h"
 
 #pragma once
 
+#include "cppurses/cppurses.hpp"
+
 using namespace cppurses;
+
+class CommandBox;
+class CommunicatorClient;
 
 class MainLayout final : public layout::Horizontal
 {
 public:
-    MainLayout();
+    MainLayout( CommunicatorClient *communicatorClient );
 
 private:
     layout::Vertical & rightPanel;
     Textbox & echoTextBox;
-    CommandBox & commandTextBox;
+    CommandBox & commandBox;
 };
 
 
