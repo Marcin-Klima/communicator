@@ -8,18 +8,23 @@
 
 using namespace cppurses;
 
-class CommandBox;
-class CommunicatorClient;
-
-class MainLayout final : public layout::Horizontal
+namespace client
 {
-public:
-    MainLayout( CommunicatorClient *communicatorClient );
+    class CommunicatorClient;
 
-private:
-    layout::Vertical & rightPanel;
-    Textbox & echoTextBox;
-    CommandBox & commandBox;
-};
+    namespace tui
+    {
+	 class CommandBox;
 
+	 class MainLayout final : public layout::Horizontal
+	 {
+	 public:
+	     explicit MainLayout( CommunicatorClient *communicatorClient );
 
+	 private:
+	     layout::Vertical & mainPanel_;
+	     Textbox & echoTextBox_;
+	     CommandBox & commandBox_;
+	 };
+    }
+}

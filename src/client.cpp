@@ -2,7 +2,7 @@
 
 int main()
 {
-	CommunicatorClient communicatorClient;
+	client::CommunicatorClient communicatorClient;
 
 
 	return communicatorClient.Start();

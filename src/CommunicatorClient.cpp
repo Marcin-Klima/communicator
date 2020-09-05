@@ -4,20 +4,23 @@
 
 #include "CommunicatorClient.h"
 
-CommunicatorClient::CommunicatorClient() :
-	mainLayout_(std::make_unique<MainLayout>(this))
+namespace client
 {
-	system_.set_head(mainLayout_.get());
-}
+    CommunicatorClient::CommunicatorClient() :
+	     mainLayout_( std::make_unique<tui::MainLayout>( this ))
+    {
+	    System::set_head( mainLayout_.get());
+    }
 
-int CommunicatorClient::Start()
-{
-	system_.run();
-	return 0;
-}
+    int CommunicatorClient::Start()
+    {
+	    system_.run();
+	    return 0;
+    }
 
-void CommunicatorClient::Stop()
-{
-	system_.exit(0);
+    void CommunicatorClient::Stop()
+    {
+	    System::exit( 0 );
+    }
 }
 

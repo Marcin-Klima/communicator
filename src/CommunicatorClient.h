@@ -9,16 +9,21 @@
 
 using namespace cppurses;
 
-class CommunicatorClient
+namespace client
 {
-public:
-    CommunicatorClient();
-    int Start();
-    void Stop();
+    class CommunicatorClient
+    {
+    public:
+	 CommunicatorClient();
 
-private:
-    std::unique_ptr<MainLayout> mainLayout_;
-    System system_;
-};
+	 int Start();
+
+	 void Stop();
+
+    private:
+	 std::unique_ptr<tui::MainLayout> mainLayout_;
+	 System system_;
+    };
+}
 
 

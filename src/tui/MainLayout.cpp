@@ -6,15 +6,18 @@
 #include "WidgetsConfiguration.h"
 #include "CommandBox.h"
 
-MainLayout::MainLayout( CommunicatorClient *communicatorClient ) :
-	 rightPanel( this->make_child<layout::Vertical>()),
-	 echoTextBox( rightPanel.make_child<Textbox>()),
-	 commandBox( rightPanel.make_child<CommandBox>( communicatorClient ))
+namespace client::tui
 {
-	commandBox.height_policy.fixed( WidgetsConfiguration::commandBoxHeight );
-	commandBox.brush.set_background( WidgetsConfiguration::backgroundCommandBox );
-	commandBox.brush.set_foreground( WidgetsConfiguration::foregroundCommandBox );
+    MainLayout::MainLayout( client::CommunicatorClient *communicatorClient ) :
+	     mainPanel_( this->make_child<layout::Vertical>()),
+	     echoTextBox_( mainPanel_.make_child<Textbox>()),
+	     commandBox_( mainPanel_.make_child<CommandBox>( communicatorClient ))
+    {
+	    commandBox_.height_policy.fixed( WidgetsConfiguration::commandBoxHeight );
+	    commandBox_.brush.set_background( WidgetsConfiguration::backgroundCommandBox );
+	    commandBox_.brush.set_foreground( WidgetsConfiguration::foregroundCommandBox );
 
-	echoTextBox.brush.set_background( WidgetsConfiguration::backgroundEchoBox );
-	echoTextBox.brush.set_foreground( WidgetsConfiguration::foregroundEchoBox );
+	    echoTextBox_.brush.set_background( WidgetsConfiguration::backgroundEchoBox );
+	    echoTextBox_.brush.set_foreground( WidgetsConfiguration::foregroundEchoBox );
+    }
 }

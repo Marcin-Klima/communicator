@@ -6,18 +6,26 @@
 
 #include "cppurses/cppurses.hpp"
 
-class CommunicatorClient;
-
 using namespace cppurses;
 
-class CommandBox final : public Textbox
+namespace client
 {
-public:
-    CommandBox( CommunicatorClient *client );
+    class CommunicatorClient;
 
-protected:
-    bool key_press_event( const Key::State & keyboard ) override;
+    namespace tui
+    {
+	 class CommandBox final : public Textbox
+	 {
+	 public:
+	     explicit CommandBox( client::CommunicatorClient *client );
 
-private:
-    CommunicatorClient *client_;
-};
+	 protected:
+	     bool key_press_event( const Key::State & keyboard ) override;
+
+	 private:
+	     client::CommunicatorClient *client_;
+
+	     void InterpretCommand();
+	 };
+    }
+}
