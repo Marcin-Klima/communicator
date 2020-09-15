@@ -5,8 +5,7 @@
 #pragma once
 
 #include "cppurses/cppurses.hpp"
-
-using namespace cppurses;
+#include "../Talkative.h"
 
 namespace client
 {
@@ -14,13 +13,13 @@ namespace client
 
     namespace tui
     {
-	 class CommandBox final : public Textbox
+	 class CommandBox final : public cppurses::Textbox, public Talkative
 	 {
 	 public:
 	     explicit CommandBox( client::CommunicatorClient *client );
 
 	 protected:
-	     bool key_press_event( const Key::State & keyboard ) override;
+	     bool key_press_event( const cppurses::Key::State & keyboard ) override;
 
 	 private:
 	     client::CommunicatorClient *client_;

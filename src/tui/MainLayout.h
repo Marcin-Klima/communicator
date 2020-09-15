@@ -16,6 +16,8 @@ namespace client
     {
 	 class CommandBox;
 
+	 class EchoBox;
+
 	 class MainLayout final : public layout::Horizontal
 	 {
 	 public:
@@ -23,7 +25,7 @@ namespace client
 
 	 private:
 	     layout::Vertical & mainPanel_;
-	     Textbox & echoTextBox_;
+	     EchoBox & echoBox_;
 	     CommandBox & commandBox_;
 	 };
     }

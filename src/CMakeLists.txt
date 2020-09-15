@@ -29,6 +29,8 @@ target_sources(communicator-client PRIVATE
         CommunicatorClient.cpp
         tui/CommandBox.cpp
         tui/MainLayout.cpp
+        tui/EchoBox.cpp
+        Talkative.cpp
         client.cpp
 )
 
