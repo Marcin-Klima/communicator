@@ -11,22 +11,22 @@ using namespace cppurses;
 namespace client
 {
     class CommunicatorClient;
+}
 
-    namespace tui
+namespace tui
+{
+    class CommandBox;
+
+    class EchoBox;
+
+    class MainLayout final : public layout::Horizontal
     {
-	 class CommandBox;
+    public:
+	 explicit MainLayout( client::CommunicatorClient *communicatorClient );
 
-	 class EchoBox;
-
-	 class MainLayout final : public layout::Horizontal
-	 {
-	 public:
-	     explicit MainLayout( CommunicatorClient *communicatorClient );
-
-	 private:
-	     layout::Vertical & mainPanel_;
-	     EchoBox & echoBox_;
-	     CommandBox & commandBox_;
-	 };
-    }
+    private:
+	 layout::Vertical & mainPanel_;
+	 EchoBox & echoBox_;
+	 CommandBox & commandBox_;
+    };
 }

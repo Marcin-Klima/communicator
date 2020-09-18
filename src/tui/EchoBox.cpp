@@ -4,7 +4,7 @@
 
 #include "EchoBox.h"
 
-namespace client::tui
+namespace tui
 {
     void EchoBox::PrintDebugInfo( const std::string & string )
     {

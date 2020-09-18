@@ -6,7 +6,7 @@
 #include "../CommunicatorClient.h"
 #include <boost/tokenizer.hpp>
 
-namespace client::tui
+namespace tui
 {
     bool CommandBox::key_press_event( const Key::State & keyboard )
     {

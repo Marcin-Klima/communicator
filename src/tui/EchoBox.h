@@ -7,19 +7,16 @@
 #include "cppurses/cppurses.hpp"
 #include "boost/thread.hpp"
 
-namespace client
+namespace tui
 {
-    namespace tui
+    class EchoBox final : public cppurses::Textbox
     {
-	 class EchoBox final : public cppurses::Textbox
-	 {
-	 public:
-	     void PrintDebugInfo( const std::string & string );
+    public:
+	 void PrintDebugInfo( const std::string & string );
 
-	     void PrintDebugInfo( const int number );
+	 void PrintDebugInfo( const int number );
 
-	 private:
-	     boost::mutex mutex_;
-	 };
-    }// namespace tui
-}//namespace client
+    private:
+	 boost::mutex mutex_;
+    };
+}// namespace tui

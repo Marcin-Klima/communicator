@@ -5,7 +5,7 @@
 #include "Talkative.h"
 #include "../tui/EchoBox.h"
 
-namespace client::utils
+namespace utils
 {
     tui::EchoBox *Talkative::echoBox_;
 
@@ -14,7 +14,7 @@ namespace client::utils
 
     }
 
-    void Talkative::SetEchoBox( client::tui::EchoBox *echoBox )
+    void Talkative::SetEchoBox( tui::EchoBox *echoBox )
     {
 	 echoBox_ = echoBox;
     }
