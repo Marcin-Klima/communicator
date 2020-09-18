@@ -14,13 +14,10 @@ namespace client
 	 class EchoBox final : public cppurses::Textbox
 	 {
 	 public:
-#ifdef DEBUG
-
 	     void PrintDebugInfo( const std::string & string );
 
 	     void PrintDebugInfo( const int number );
 
-#endif
 	 private:
 	     boost::mutex mutex_;
 	 };

@@ -6,7 +6,7 @@
 #include "WidgetsConfiguration.h"
 #include "CommandBox.h"
 #include "EchoBox.h"
-#include "../Talkative.h"
+#include "../utilities/Talkative.h"
 
 namespace client::tui
 {
@@ -22,6 +22,6 @@ namespace client::tui
 	    echoBox_.brush.set_background( WidgetsConfiguration::backgroundEchoBox );
 	    echoBox_.brush.set_foreground( WidgetsConfiguration::foregroundEchoBox );
 
-	    Talkative::SetEchoBox(&echoBox_);
+	    utils::Talkative::SetEchoBox(&echoBox_);
     }
 }

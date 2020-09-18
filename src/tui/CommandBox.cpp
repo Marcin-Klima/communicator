@@ -10,13 +10,18 @@ namespace client::tui
 {
     bool CommandBox::key_press_event( const Key::State & keyboard )
     {
-	 if ( keyboard.key == Key::Ctrl_e )
+	 if ( keyboard.key == Key::Enter )
 	 {
 	     if ( not contents().empty() and contents().at( 0 ) == "/" )
 	     {
-		  PrintDebugInfo( "Interpreting starts.." );
 		  InterpretCommand();
 	     }
+	     return true;
+	 }
+	 else if ( keyboard.key == Key::Ctrl_e )
+	 {
+	     append( '\n' );
+	     return true;
 	 }
 	 return Textbox::key_press_event( keyboard );
     }
@@ -36,8 +41,10 @@ namespace client::tui
 	 Tokenizer tokenizer( command, separator );
 	 for ( Tokenizer::iterator tok = tokenizer.begin(); tok != tokenizer.end(); ++tok )
 	 {
+	     PrintDebugInfo( tok.current_token());
 	     tok->size();
 	 }
+	 PrintDebugInfo("Dupa XD", __FILE__, __LINE__);
 
 	 if ( command == "/exit" )
 	 {

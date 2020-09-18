@@ -5,7 +5,7 @@
 #pragma once
 
 #include "cppurses/cppurses.hpp"
-#include "../Talkative.h"
+#include "../utilities/Talkative.h"
 
 namespace client
 {
@@ -13,7 +13,7 @@ namespace client
 
     namespace tui
     {
-	 class CommandBox final : public cppurses::Textbox, public Talkative
+	 class CommandBox final : public cppurses::Textbox, public utils::Talkative
 	 {
 	 public:
 	     explicit CommandBox( client::CommunicatorClient *client );

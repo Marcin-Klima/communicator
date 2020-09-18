@@ -6,12 +6,10 @@
 
 namespace client::tui
 {
-
-#ifdef DEBUG
-
     void EchoBox::PrintDebugInfo( const std::string & string )
     {
 	 boost::lock_guard<boost::mutex> guard( mutex_ );
+
 	 append( "DEBUG> " );
 	 append( string );
 	 append( '\n' );
@@ -24,6 +22,4 @@ namespace client::tui
 	 append( number );
 	 append( '\n' );
     }
-
-#endif
 }

@@ -30,7 +30,7 @@ target_sources(communicator-client PRIVATE
         tui/CommandBox.cpp
         tui/MainLayout.cpp
         tui/EchoBox.cpp
-        Talkative.cpp
+        utilities/Talkative.cpp
         client.cpp
 )
 
