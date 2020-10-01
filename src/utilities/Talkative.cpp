@@ -3,7 +3,7 @@
 //
 
 #include "Talkative.h"
-#include "../tui/EchoBox.h"
+#include "EchoBox.h"
 
 namespace utils
 {

@@ -3,7 +3,7 @@
 //
 
 #include "CommandBox.h"
-#include "../CommunicatorClient.h"
+#include "../client/CommunicatorClient.h"
 #include <boost/tokenizer.hpp>
 
 namespace tui

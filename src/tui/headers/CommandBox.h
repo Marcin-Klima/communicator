@@ -5,7 +5,7 @@
 #pragma once
 
 #include "cppurses/cppurses.hpp"
-#include "../utilities/Talkative.h"
+#include "../../utilities/Talkative.h"
 
 namespace client
 {

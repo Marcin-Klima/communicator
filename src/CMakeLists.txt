@@ -22,20 +22,8 @@ if (BOOST_FOUND)
     message(STATUS "Boost include directories ${Boost_INCLUDE_DIRS}")
 endif ()
 
+set(COMMUNICATOR_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+
 add_subdirectory(tui)
-
-#CLIENT
-add_executable(communicator-client)
-target_link_libraries(communicator-client LINK_PUBLIC tui)
-target_sources(communicator-client PRIVATE
-        CommunicatorClient.cpp
-        utilities/Talkative.cpp
-        client.cpp
-        )
-
-#SERVER
-add_executable(communicator-server)
-target_link_libraries(communicator-server LINK_PUBLIC tui)
-target_sources(communicator-server PRIVATE
-        server.cpp
-        )
+add_subdirectory(client)
+add_subdirectory(server)
