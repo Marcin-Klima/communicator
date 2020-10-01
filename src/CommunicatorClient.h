@@ -5,7 +5,7 @@
 #pragma once
 
 #include "cppurses/cppurses.hpp"
-#include "tui/MainLayout.h"
+#include "MainLayout.h"
 
 using namespace cppurses;
 

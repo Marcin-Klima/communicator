@@ -6,7 +6,6 @@
 #include "WidgetsConfiguration.h"
 #include "CommandBox.h"
 #include "EchoBox.h"
-#include "../utilities/Talkative.h"
 
 namespace tui
 {
